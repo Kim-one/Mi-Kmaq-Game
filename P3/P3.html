@@ -1,0 +1,258 @@
+<!-- 
+    Purpose: This file provides the structure for the Mi'kmaq game using the bootstrap grid system.
+
+    Authors: Emmanuel Adeyemi, created this file, made headings,and created the allowDrop function
+             Terena Fenton, imported the images and audios, and created the drop function
+             Jovannah Moxey, implemented the top row with has the volume and play again button 
+             Kimone Barrett, created the grid for the images and the positioning of the page along 
+             with the drag function
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Sets what is displayed in the window tab -->
+    <title>Phase III</title>
+    <!-- Make Bootstrap available to this file -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Make CSS file available to this file -->
+    <link rel="stylesheet" href="./P3.css" />
+    <!-- Make JQuery library available to this file -->
+    <script src="./jquery-3.6.0.js"></script>
+    <!-- Make the javascript file available to this file -->
+    <script src="./P3.js"></script>
+  </head>
+
+  <!-- onload="randomImage()" -->
+  <body onload="get()">
+    <!-- Container containing the play volumn image, text and try again message  -->
+    <div class="container">
+      <div>
+        <h1 id="displayMessage" onclick="startGame()">
+          Click your score:
+          <span id="score">0/0</span>
+        </h1>
+      </div>
+
+      <div class="row g-0">
+        <!-- Empty column for formatting purposes -->
+        <div class="col-3"></div>
+        <!-- Column to display play volumn image -->
+        <div class="col-1">
+          <img
+            id="vol"
+            type="button"
+            onclick="playAudio()"
+            src="./images/vol.jpg"
+            alt="volumn"
+          />
+        </div>
+        <!-- Column to display text image -->
+        <div class="col-3">
+          <p id="displayWord"></p>
+        </div>
+        <!-- Column to restart the game -->
+        <div class="col-0">
+          <p id="tryagain" onclick="restartGame()"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container containing the draggable bear, the star, sunflower, success text, oops text 
+         and 9 tiles -->
+    <div class="container">
+      <!-- First Row containing top star, top sunflower, wiktm, teluisi, and nin images -->
+      <div class="row g-0">
+        <!-- Column containing the star one image-->
+        <div class="col-2">
+          <img
+            src="./images/star.jpg"
+            draggable="false"
+            id="success1"
+            alt="star"
+          />
+        </div>
+        <!-- Empty column for formatting purposes -->
+        <div class="col-1"></div>
+        <!-- Column containing the wiktm image-->
+        <div
+          class="col-2"
+          id="img0"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,1)"
+        >
+          <img
+            id="wiktm"
+            draggable="false"
+            src="./images/wiktm.jpg"
+            alt="wiktm"
+          />
+        </div>
+        <!-- Column containing the teluisi image-->
+        <div
+          class="col-2"
+          id="img1"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,2)"
+        >
+          <img
+            id="teluisi"
+            draggable="false"
+            src="./images/teluisi.jpg"
+            alt="teluisi"
+          />
+        </div>
+        <!-- Column containing the nin image-->
+        <div
+          class="col-2"
+          id="img2"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,3)"
+        >
+          <img id="nin" draggable="false" src="./images/nin.jpg" alt="nin" />
+        </div>
+        <!-- Empty column for formatting purposes -->
+        <div class="col-1"></div>
+        <!-- Column containing the sunflower image-->
+        <div class="col-2">
+          <img
+            src="./images/sun.jpg"
+            draggable="false"
+            id="oops1"
+            alt="sunflower"
+          />
+        </div>
+      </div>
+      <!-- Second Row containing bear and success text, oops text, mijisi, itu, and kil images -->
+      <div class="row g-0">
+        <!-- Column containing the success text and the bear image-->
+        <div class="col-2">
+          <img
+            src="./images/successText.jpg"
+            draggble="false"
+            id="successText"
+          />
+          <img
+            id="bear"
+            src="./images/bear.jpg"
+            draggable="false"
+            ondragstart="drag(event)"
+            alt="bear"
+          />
+        </div>
+        <!-- Empty column for formatting purposes -->
+        <div class="col-1"></div>
+        <!-- Column containing the mijisi image-->
+        <div
+          class="col-2"
+          id="img3"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,4)"
+        >
+          <img
+            id="mijisi"
+            draggable="false"
+            src="./images/mijisi.jpg"
+            alt="mijisi"
+          />
+        </div>
+        <!-- Column containing the ltu image-->
+        <div
+          class="col-2"
+          id="img4"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,5)"
+        >
+          <img id="ltu" draggable="false" src="./images/ltu.jpg" alt="itu" />
+        </div>
+        <!-- Column containing the kil image-->
+        <div
+          class="col-2"
+          id="img5"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,6)"
+        >
+          <img id="kil" draggable="false" src="./images/kil.jpg" alt="kil" />
+        </div>
+        <!-- Empty column for formatting purposes -->
+        <div class="col-1"></div>
+        <!-- Column containing the oops text-->
+        <div class="col-2">
+          <img
+            src="./images/oopsText.jpg"
+            id="oopsText"
+            draggable="false"
+            alt="oopsText"
+          />
+        </div>
+      </div>
+
+      <!-- Third row containing the buttom star, kesalk, eliey, aqq images and buttom sunflower -->
+      <div class="row g-0">
+        <!-- Column containing star two -->
+        <div class="col-2">
+          <img
+            src="./images/star.jpg"
+            id="success2"
+            draggable="false"
+            alt="star"
+          />
+        </div>
+        <!-- Empty column for formatting purposes -->
+        <div class="col-1"></div>
+        <!-- Column containing the kesalk image-->
+        <div
+          class="col-2"
+          id="img6"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,7)"
+        >
+          <img
+            id="kesalk"
+            draggable="false"
+            src="./images/kesalk.jpg"
+            alt="kesalk"
+          />
+        </div>
+        <!-- Column containing the eliey image-->
+        <div
+          class="col-2"
+          id="img7"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,8)"
+        >
+          <img
+            id="eliey"
+            draggable="false"
+            src="./images/eliey.jpg"
+            alt="eliey"
+          />
+        </div>
+        <!-- Column containing the aqq image-->
+        <div
+          class="col-2"
+          id="img8"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event,9)"
+        >
+          <img id="aqq" draggable="false" src="./images/aqq.jpg" alt="aqq" />
+        </div>
+        <!-- Empty column for formatting purposes -->
+        <div class="col-1"></div>
+        <!-- Column to display buttom sunflower image -->
+        <div class="col-2">
+          <img
+            src="./images/sun.jpg"
+            id="oops2"
+            draggable="false"
+            alt="sunflower"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

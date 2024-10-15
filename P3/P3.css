@@ -1,0 +1,109 @@
+/* 
+  Purpose: The purpose of this file is to provide style to the html file such as 
+  font-size, font style etc. 
+
+ Authors: Emmanuel Adeyemi, provided styles for the class and ID's
+          Kimone Barrett, provided styles for the HTML tags
+          Terena Fenton, implemented ID's to hide elements 
+          Jovannah Moxey, provided styles for the HTML tags
+*/
+
+/****************** HTML Style tags *******************/
+
+/* Changes the background colour of the entire page to Khaki */
+body {
+  background-color: khaki;
+  overflow: hidden; /* no scolling is enabled */
+  /*zoom: 1.2;*/ /* Zoom to 120% */
+}
+
+h1 {
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 430%;
+  text-align: right;
+}
+
+/* Allows the header clour to change to magenta when you hover over it  */
+h1:hover {
+  color: magenta;
+}
+
+/* Allows the header colour to change to magenta when you hover over it  */
+#tryagain:hover {
+  /* display: none; */
+  color: magenta;
+}
+
+/* Allows the cursor to change to a pointer, as well as sets the font-size
+  font family as well as aligning the text on the center of the screen. */
+#tryagain {
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 430%;
+  text-align: center;
+}
+
+/* #score {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+} */
+
+/* Sets the width and height to 100%*/
+img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/******************** ID Based Styles ************************/
+#displayMessage {
+  /* cursor: pointer; */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: right;
+}
+
+#vol {
+  display: none;
+}
+
+/* ID to hide the success text until it is time to be shown */
+#successText {
+  display: none;
+}
+
+/* ID to hide star one until it is time to be shown  */
+#success1 {
+  display: none;
+}
+
+/* ID to hide star two until it is time to be shown  */
+#success2 {
+  display: none;
+}
+
+/* ID to hide the oops text until it is time to be shown  */
+#oopsText {
+  display: none;
+}
+
+/* ID to hide sunflower one until it is time to be shown  */
+#oops1 {
+  display: none;
+}
+
+/* ID to hide sunflower two until it is time to be shown  */
+#oops2 {
+  display: none;
+}
+
+/******************** Class Based Styles **********************/
+
+/* Class to set the width and height of the words to 54% and
+  prevents it from being dragged */
+.text {
+  -webkit-user-drag: none; /* to prevent user from dragging the displayed words*/
+  position: relative;
+  width: 54%;
+  height: 54%;
+}

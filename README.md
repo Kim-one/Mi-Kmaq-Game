@@ -96,10 +96,3 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 
 - Inspired by the culture and heritage of the **Mi'kmaq people**.
 - Special thanks to contributors and supporters of this project.
-
----
-
-Feel free to explore, contribute, and share your feedback!
-```
-
-Let me know if you'd like to add or modify anything!

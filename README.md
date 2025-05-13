@@ -22,10 +22,6 @@ Help young children learn basic Mi’kmaq vocabulary in a fun, interactive way.
 /scripts.js
 /images/
 
-markdown
-Copy
-Edit
-
 ## ✅ Improvements
 - Add pronunciation audio
 - Score tracking
